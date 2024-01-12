@@ -1,0 +1,14 @@
+Package: delaney.neighbours
+Type: Package
+Title: Delaney triangulation-based pairs of neighbours
+Version: 0.1.0
+Date: 2024-01-11
+Author: Alexander Favorov
+Maintainer: Alexander Favorov <favorov@sensi.org>
+Description: Delaney triangulation-based pairs of neighbours. Nowadays, it is just a simplyfying and symmetrising wrapper around deldir.
+License: Artistic-2.0
+LazyLoad: yes
+biocViews: Spatial
+Depends: R (>= 2.5.0)
+RoxygenNote: 7.2.3
+Encoding: UTF-8
