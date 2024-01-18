@@ -10,5 +10,5 @@ License: Artistic-2.0
 LazyLoad: yes
 biocViews: Spatial
 Depends: R (>= 2.5.0)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.0
 Encoding: UTF-8

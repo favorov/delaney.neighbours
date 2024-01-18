@@ -3,16 +3,17 @@
 #import description end 
 0
 
-#' delaney.neighbours
+
+#' delaunay.neighbours
 #' 
-#' Delaney triangulation-based pairs of neighbours
+#' Delaunay triangulation-based pairs of neighbours
 #' @param points a data structure that has fields \code{points$x} and \code{points$y} with pairs 
 #' of coordinates of the points; if one or both are absent, or the parameter in \code{NULL} (default),
 #' the coordinates as to be passed as \code{x} and \code{y} coordinate vectors
 #' @param x,y coordinate vectors
 #' @return \code{data.frame}, each row is a pair of indices of neighbouring points
 #' @export
-delaney.neighbours<-function(points=NULL,x=NULL,y=NULL){
+delaunay.neighbours<-function(points=NULL,x=NULL,y=NULL){
   ##get the sides of Delauneu triangles
   #tess<-cwse %>% select(x,y) %>% deldir
   if(is.null(points$x)){
