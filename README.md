@@ -1,4 +1,4 @@
-delaney.neighbours
+delaunay.neighbours
 ==================
 
 The package to prepare a list of neignbour pairs based on Delaneunau triangulation.
