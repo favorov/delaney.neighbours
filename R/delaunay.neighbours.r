@@ -12,6 +12,14 @@
 #' @param x could be a data structure that can be subsetted by \code{$x} and \code{$y} 
 #' (the names can be altered by parameters #' \code{x.name} and \code{y.name}) or a numeric coordinate vector. In this case, y parameter is required.
 #' @return \code{data.frame}, each row is a pair of indices of neighbouring points
+#' @examples
+#' x <- runif(50)
+#' y <- runif(50)
+#' df<-data.frame(x=x,y=y)
+#' neighb.xy<-delaunay.neighbours(x,y)
+#' neighb.df<-delaunay.neighbours(df)
+#' dfc<-data.frame(x.coord=x,y.coord=y)
+#' neighb.dfc<-delaunay.neighbours(dfc,x.name="x.coord",y.name="y.coord")
 #' @export
 delaunay.neighbours<-function(x, ...){
   ##get the sides of Delauneu triangles
