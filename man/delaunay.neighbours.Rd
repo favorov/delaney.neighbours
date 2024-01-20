@@ -2,20 +2,32 @@
 % Please edit documentation in R/delaunay.neighbours.r
 \name{delaunay.neighbours}
 \alias{delaunay.neighbours}
-\title{delaunay.neighbours}
+\alias{delaunay.neighbours.numeric}
+\alias{delaunay.neighbours.default}
+\title{delaunay.neighbours: create a list of neighbouring point pairs form the point coordinates}
 \usage{
-delaunay.neighbours(points = NULL, x = NULL, y = NULL)
+delaunay.neighbours(x, ...)
+
+\method{delaunay.neighbours}{numeric}(x, y, ...)
+
+\method{delaunay.neighbours}{default}(x, x.name = "x", y.name = "y", ...)
 }
 \arguments{
-\item{points}{a data structure that has fields \code{points$x} and \code{points$y} with pairs 
-of coordinates of the points; if one or both are absent, or the parameter in \code{NULL} (default),
-the coordinates as to be passed as \code{x} and \code{y} coordinate vectors}
+\item{x}{could be a data structure that can be subsetted by \code{$x} and \code{$y} 
+(the names can be altered by parameters #' \code{x.name} and \code{y.name}) or a numeric coordinate vector. In this case, y parameter is required.}
 
-\item{x, y}{coordinate vectors}
+\item{y}{second coordinate vector}
+
+\item{x.name}{the field of column name to subset \code{x$x.name}, the default is "x"}
+
+\item{y.name}{the field of column name to subset \code{x$y.name}, the default is "y"}
 }
 \value{
 \code{data.frame}, each row is a pair of indices of neighbouring points
 }
 \description{
+delaunay.neighbours
+}
+\details{
 Delaunay triangulation-based pairs of neighbours
 }

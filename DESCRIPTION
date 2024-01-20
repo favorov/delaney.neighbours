@@ -5,11 +5,10 @@ Version: 0.1.1
 Date: 2024-01-17
 Author: Alexander Favorov
 Maintainer: Alexander Favorov <favorov@sensi.org>
-Description: Delaney triangulation-based pairs of neighbours. 
-Nowadays, it is just a simplyfying and symmetrising wrapper around deldir.
+Description: Delaney triangulation-based pairs of neighbours. Nowadays, it is just a simplyfying and symmetrising wrapper around deldir.
 License: Artistic-2.0
 LazyLoad: yes
 biocViews: Spatial
 Depends: R (>= 2.5.0)
-RoxygenNote: 7.3.0
+RoxygenNote: 7.2.3
 Encoding: UTF-8
