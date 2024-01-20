@@ -21,6 +21,7 @@ delaunay.neighbours<-function(x, ...){
 
 #' @rdname delaunay.neighbours
 #' @param y second coordinate vector
+#' @export
 delaunay.neighbours.numeric <- function(x,y,...){
   if (class(y) != "numeric") {stop("delaney.neighbours: x is numeric, y is not.\n")}
   if(length(x)!=length(y)) {stop("delaney.neighbours: x and y of different lengths.\n")}
@@ -35,6 +36,7 @@ delaunay.neighbours.numeric <- function(x,y,...){
 #' @rdname delaunay.neighbours
 #' @param x.name the field of column name to subset \code{x$x.name}, the default is "x"
 #' @param y.name the field of column name to subset \code{x$y.name}, the default is "y"
+#' @export
 delaunay.neighbours.default <- function(x,x.name="x",y.name="y",...){
   if(is.atomic(x)) {stop("delaney.neighbours: x is atomic and it is not numeric.\n")}
   if(is.null(x[[x.name]])){ #it is $
