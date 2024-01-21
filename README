@@ -1,3 +1,4 @@
 0.1.0 -- imitial version
 0.1.1 -- S3 version, two vectors or data.framw with x and y
+0.1.2 -- SpatialExperiment as first parameter added
 
