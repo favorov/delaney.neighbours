@@ -3,6 +3,7 @@
 \name{delaunay.neighbours}
 \alias{delaunay.neighbours}
 \alias{delaunay.neighbours.numeric}
+\alias{delaunay.neighbours.SpatialExperiment}
 \alias{delaunay.neighbours.default}
 \title{delaunay.neighbours: create a list of neighbouring point pairs form the point coordinates}
 \usage{
@@ -10,11 +11,20 @@ delaunay.neighbours(x, ...)
 
 \method{delaunay.neighbours}{numeric}(x, y, ...)
 
+\method{delaunay.neighbours}{SpatialExperiment}(x, ...)
+
 \method{delaunay.neighbours}{default}(x, x.name = "x", y.name = "y", ...)
 }
 \arguments{
-\item{x}{could be a data structure that can be subsetted by \code{$x} and \code{$y} 
-(the names can be altered by parameters #' \code{x.name} and \code{y.name}) or a numeric coordinate vector. In this case, y parameter is required.}
+\item{x}{could be a a numeric coordinate vector. 
+In this case, \code{y} parameter is required. 
+
+If \code{x} is a \code{SpatialExperiment}, the point (cells) coordinates are read from 
+\code{Xcoord} and \code{Ycood} slots.
+
+Alternatively, \code{x} is a 
+data structure that can be subsetted by \code{$x} and \code{$y} 
+or by the names provided by \code{x.name} and \code{y.name}) parameters to get the point coordinates.}
 
 \item{y}{second coordinate vector}
 

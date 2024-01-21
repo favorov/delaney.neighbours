@@ -9,8 +9,17 @@
 #' Delaunay triangulation-based pairs of neighbours
 #' 
 #' @title delaunay.neighbours: create a list of neighbouring point pairs form the point coordinates
-#' @param x could be a data structure that can be subsetted by \code{$x} and \code{$y} 
-#' (the names can be altered by parameters #' \code{x.name} and \code{y.name}) or a numeric coordinate vector. In this case, y parameter is required.
+#' @param x could be a a numeric coordinate vector. 
+#' In this case, \code{y} parameter is required. 
+#' 
+#' If \code{x} is a \code{SpatialExperiment}, the point (cells) coordinates are read from 
+#' \code{Xcoord} and \code{Ycood} slots.
+#' 
+#' Alternatively, \code{x} is a 
+#' data structure that can be subsetted by \code{$x} and \code{$y} 
+#' or by the names provided by \code{x.name} and \code{y.name}) parameters to get the point coordinates.
+#' 
+#' 
 #' @return \code{data.frame}, each row is a pair of indices of neighbouring points
 #' @examples
 #' x <- runif(50)
@@ -40,6 +49,19 @@ delaunay.neighbours.numeric <- function(x,y,...){
   neighb_pairs <- neighb_pairs %>% rbind(neighb_pairs_compl)
   neighb_pairs
 }
+
+#' @rdname delaunay.neighbours
+#' @export
+delaunay.neighbours.SpatialExperiment <- function(x,...){
+  tesselation<-deldir(x$Xcoord,x$Ycoord)
+  neighb_pairs<-tesselation$delsgs[,5:6]
+  #add the complement pairs
+  neighb_pairs_compl<-neighb_pairs %>% select(ind1=ind2,ind2=ind1)
+  neighb_pairs <- neighb_pairs %>% rbind(neighb_pairs_compl)
+  neighb_pairs
+}
+
+
 
 #' @rdname delaunay.neighbours
 #' @param x.name the field of column name to subset \code{x$x.name}, the default is "x"
