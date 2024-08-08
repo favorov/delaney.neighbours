@@ -49,4 +49,5 @@ neighb.xy<-delaunay.neighbours(x,y)
 neighb.df<-delaunay.neighbours(df)
 dfc<-data.frame(x.coord=x,y.coord=y)
 neighb.dfc<-delaunay.neighbours(dfc,x.name="x.coord",y.name="y.coord")
+
 }

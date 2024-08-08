@@ -1,3 +1,4 @@
+#' @import interp
 #' @import deldir
 #' @import dplyr
 #import description end 
@@ -29,6 +30,8 @@
 #' neighb.df<-delaunay.neighbours(df)
 #' dfc<-data.frame(x.coord=x,y.coord=y)
 #' neighb.dfc<-delaunay.neighbours(dfc,x.name="x.coord",y.name="y.coord")
+#' 
+
 #' @export
 delaunay.neighbours<-function(x, ...){
   ##get the sides of Delauneu triangles
